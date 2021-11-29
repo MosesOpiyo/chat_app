@@ -27,12 +27,12 @@ class Chatbox(models.Model):
         self.save()
 
 class Chat(models.Model):
-    admin = models.ForeignKey(Account,on_delete=models.RESTRICT)
+    owner = models.ForeignKey(Account,on_delete=models.RESTRICT)
     chatbox = models.ForeignKey(Chatbox,on_delete=CASCADE)
     message = models.TextField()
 
     def __str__(self):
-        return self.admin.username + " comment | " + str(self.chatbox.name)
+        return self.owner.username + self.message + str(self.chatbox.name)
 
 
    

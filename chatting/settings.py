@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+    'users.apps.UsersConfig',
+    'chatterapp.apps.ChatterappConfig'
 ]
 
 MIDDLEWARE = [
@@ -84,6 +87,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = 'users.Account'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
